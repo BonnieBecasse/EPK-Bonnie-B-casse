@@ -1,4 +1,4 @@
-<!doctype html>
+EP<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -21,6 +21,28 @@
 }
 
 /* ---- GLOBAL ---- */
+
+body{
+  margin:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAAAAACPAi4CAAABJUlEQVR4nO2WwQ3CMBRFX4JEE+g7C3IPaBrZEcDgEaKkECNQSAhJdAuvkz4z9zhblQcGfm2v2PpNFVtCSd2Q88YkfxFpPZfIP+GBS3ZMr12H5m3diWQJ5zY1cLU2zEY2QdXdBymMR63drWepOYhFJ5tZ0FQH2t5Ygq4lbkybISmqQ4w1bgoMXRUz15yWnADdQe9QWN6YEB3cYcB/gDPAxQXUOaUczCxx1k5gWSjH8kVURHaT4nrh+qJH2ipkf1C0E5pLLm13b7D4XGQS3vbD5wG5AdjWCMvSL5mVMQbXD259xChf5xpVVFbyOkm1b5tt0v0qlQSnLcFAGecmBUVmNmBF3d0bn9wBR8zss+8hjhDOgZdkrA9o4bAQAAAAASUVORK5CYII=');
+  background-size:900px;
+  background-attachment:fixed;
+  background-position:center;
+
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--text);
+
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+
+  min-height:100vh;
+
+  /* micro-filtre pour l’intégration */
+  backdrop-filter:brightness(1.02);
+}
+
 body{
   margin:0;
   background:linear-gradient(180deg,var(--main),#efe1d7);
@@ -30,6 +52,7 @@ body{
   -moz-osx-font-smoothing:grayscale;
   min-height:100vh;
 }
+
 .wrap{
   max-width:var(--maxw);
   margin:28px auto;
@@ -38,7 +61,12 @@ body{
   box-shadow:0 18px 50px rgba(16,12,8,.12);
   background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.03" fill="white"/></svg>') repeat;
 }
-.page{opacity:0;transform:translateY(6px);animation:appear .5s ease forwards;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.page{
+  opacity:0;
+  transform:translateY(6px);
+  animation:appear .5s ease forwards;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)
+}
 @keyframes appear{to{opacity:1;transform:translateY(0)}}
 
 /* ---- COVER ---- */
@@ -100,8 +128,19 @@ main{padding:40px 56px 48px}
 .body{color:var(--muted);line-height:1.65;font-size:15px}
 
 /* ---- IMAGES ---- */
-.photo-inline{width:100%;border-radius:8px;overflow:hidden;box-shadow:0 12px 30px rgba(8,6,4,.08);background:#eee}
-.photo-inline img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-inline{
+  width:100%;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(8,6,4,.08);
+  background:#eee;
+}
+.photo-inline img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 a.photo-link{display:block;transition:opacity .3s ease}
 a.photo-link:hover{opacity:.9}
 
@@ -113,33 +152,7 @@ a.photo-link:hover{opacity:.9}
 footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(0,0,0,.03)}
 .contact{font-size:14px;color:var(--muted)}
 
-/* ---- FONDS SPÉCIAUX ---- */
-.bg-nature{
-  background:url('https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/fond-de-feuilles-sechees-en-beige.jpg') no-repeat left bottom;
-  background-size:cover;
-  position:relative;
-  min-height:700px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  margin:0 -56px 42px;
-  overflow:hidden;
-}
-.bg-nature .overlay{
-  width:100%;
-  height:100%;
-  padding:60px 100px 60px 200px;
-  background:linear-gradient(to left,rgba(255,255,255,.8) 0,rgba(255,255,255,.5) 40%,rgba(255,255,255,.25) 70%,transparent 100%);
-  display:flex;justify-content:flex-end;align-items:center;
-}
-.bg-nature .col.right{
-  max-width:520px;
-  background:rgba(255,255,255,.55);
-  padding:28px 36px;
-  border-radius:10px;
-  box-shadow:0 4px 20px rgba(0,0,0,.06);
-}
-
+/* ---- FONDS SPÉCIAUX (LE BAUME & CONTACT) ---- */
 .bg-craft{
   background:url('https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/des-brindilles-sur-du-papier-craft.jpg') no-repeat right bottom;
   background-size:cover;
@@ -194,6 +207,70 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
   color:#3a312d;
 }
 
+/* ---- UNIVERS ARTISTIQUE : NOUVEAU LAYOUT SANS FOND ---- */
+.univers-section{
+  margin-bottom:42px;
+}
+.univers-block{
+  display:flex;
+  gap:34px;
+  align-items:flex-start;
+  margin-bottom:32px;
+}
+.univers-block:last-child{margin-bottom:0;}
+.univers-block .text{flex:1.4;}
+.univers-block .photo{flex:1;}
+.univers-block .photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:8px;
+}
+
+/* alternance */
+.univers-block.reverse{flex-direction:row-reverse;}
+
+/* ---- STYLE “VIEILLE ENCYCLOPÉDIE / MUSÉUM” ---- */
+.naturaliste-frame{
+  background:rgba(255,255,245,0.92);
+  border:1px solid #d6c8b8;
+  border-radius:8px;
+  padding:24px 28px;
+  box-shadow:
+    0 4px 16px rgba(0,0,0,.08),
+    inset 0 0 12px rgba(0,0,0,.05);
+  backdrop-filter:blur(2px);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.naturaliste-frame:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.12),
+    inset 0 0 18px rgba(0,0,0,.06);
+}
+
+.photo-naturaliste{
+  border:1px solid #d1c5b6;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.12),
+    inset 0 0 10px rgba(0,0,0,.08);
+  padding:6px;
+  background:linear-gradient(180deg,#fefdf9,#f8f4ec);
+  border-radius:6px;
+}
+
+/* petite animation d'apparition */
+.fade-slide{
+  opacity:0;
+  transform:translateY(8px);
+  animation:fadeSlide .7s ease forwards;
+}
+@keyframes fadeSlide{
+  to{opacity:1;transform:translateY(0);}
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width:980px){
   .cover{flex-direction:column}
@@ -203,8 +280,6 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
   h1{font-size:32px}
   .title .subtitle{display:block;margin-left:0;margin-top:4px}
 
-  /* SECTIONS PLEINE LARGEUR */
-  .bg-nature,
   .bg-craft{
     margin:0;
     min-height:auto;
@@ -212,14 +287,12 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
     background-position:center;
     background-size:cover;
   }
-  .bg-nature .overlay,
   .bg-craft .overlay{
     padding:32px 20px;
     background:rgba(255,255,255,.94);
     justify-content:center;
     align-items:center;
   }
-  .bg-nature .col.right,
   .bg-craft .col.left{
     max-width:100%;
     background:rgba(255,255,255,.98);
@@ -246,6 +319,11 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
   }
 
   .body{font-size:14px;line-height:1.65}
+
+  .univers-block,
+  .univers-block.reverse{
+    flex-direction:column;
+  }
 }
   </style>
 </head>
@@ -267,6 +345,7 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
     </header>
 
     <main>
+      <!-- PROLOGUE + FICHE RAPIDE (inchangé) -->
       <section class="section" aria-labelledby="presentation-title">
         <div class="col wide">
           <h2 id="presentation-title" class="title">Portrait d'une espèce menacée – <span class="subtitle">Prologue</span></h2>
@@ -279,7 +358,7 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
           <h2 class="title">Fiche rapide</h2>
           <div class="body">
             <p><strong>Format :</strong> solo — guitare & chant</p>
-            <p><strong>Genre :</strong> chanson française / poétique</p>
+            <p><strong>Genre :</strong> chanson française</p>
             <p><strong>Dates passées :</strong></p>
             <ul class="concert-list">
               <li><strong>À Thou Bout d’Chant</strong> — 24 mai 2025</li>
@@ -289,10 +368,12 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
         </div>
       </section>
 
-      <!-- À L’AUBE DU NOUVEAU MONDE -->
-      <section class="section bg-nature" aria-labelledby="univers-title">
-        <div class="overlay">
-          <div class="col right">
+      <!-- UNIVERS ARTISTIQUE — NOUVELLE MISE EN PAGE (2 BLOCS) -->
+      <section class="univers-section" aria-labelledby="univers-title">
+
+        <!-- BLOC 1 : texte gauche, photo décor à droite -->
+        <div class="univers-block fade-slide">
+          <div class="text naturaliste-frame">
             <h2 id="univers-title" class="title">
               À l’aube du nouveau monde – <span class="subtitle">univers artistique</span>
             </h2>
@@ -301,15 +382,29 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
               <p>Dans ce nouveau millénaire, où tout est en perpétuel mouvement, <strong>elle collectionne et classe</strong> inlassablement <strong>les émotions humaines</strong>, dévoilant un <strong>bestiaire fabuleux</strong> où l’humain et l’animal ne font qu’un, luttant pour leur survie <strong>dans un monde résolument hostile.</strong></p>
               <p>Sur scène s’exhibe une <em>constellation d’étranges merveilles</em>, empreinte du <strong>chaos</strong> et des <strong>incertitudes</strong> qui tourmentent notre créature hybride, mi-femme, mi-volatile. Des reliques du passé, entreposées çà et là, nous invitent à <strong>perdre nos repères pour mieux nous retrouver.</strong></p>
               <p><em>Ici, il n’est pas question d’âme mais de matière.</em></p>
-              <p>À l’aube du nouveau monde, il faut aussi apprendre à <strong>s’affranchir des injonctions</strong> — celles qui empêchent d’être soi. Loin d’être une « bécasse », notre héroïne s’est choisi un pseudonyme à la hauteur de ses ambitions, qui n’est pas sans rappeler <em>Bonnie Parker</em>, femme intrépide et dangereuse, mais aussi <em>Anne Bonny</em>, la pirate la plus célèbre de l’histoire.</p>
-              <p>S’il y a bien une chose que Bonnie Bécasse revendique, c’est la volonté de <strong>s’extraire des cases — pour ne pas dire des cages</strong>. La cage, justement, que représentent <strong>les corsets</strong> et autres toilettes <strong>pour les femmes de l’époque</strong>, figurée sur scène par une <em>jupe crinoline</em> entravant le mouvement.</p>
-              <p>Véritable <strong>cabinet de curiosités contemporaines</strong>, l’univers de Bonnie Bécasse met en lumière la <em>fragilité du vivant</em> et la <em>résistance du féminin</em>.</p>
             </div>
+          </div>
+          <div class="photo photo-naturaliste">
+            <img src="https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/De%CC%81cor%2001.png" alt="Décor de scène — univers de Bonnie Bécasse">
+          </div>
+        </div>
+
+        <!-- BLOC 2 : texte droite, photo crinoline à gauche -->
+        <div class="univers-block reverse fade-slide">
+          <div class="text naturaliste-frame">
+            <div class="body">
+              <p>À l’aube du nouveau monde, il faut aussi apprendre à <strong>s’affranchir des injonctions</strong> — celles qui empêchent d’être soi. </p> <p>Loin d’être une « bécasse », notre héroïne s’est choisi un pseudonyme à la hauteur de ses ambitions, qui n’est pas sans rappeler <strong>Bonnie Parker, femme intrépide et dangereuse</strong>, mais aussi <strong>Anne Bonny</strong>, la pirate la plus célèbre de l’histoire.</p>
+              <p>S’il y a bien une chose que Bonnie revendique, c’est la <strong>volonté de s’extraire des cases</strong> — pour ne pas dire des <strong>cages</strong>. La cage, justement, que représentent <strong>les corsets</strong> et autres toilettes <strong>pour les femmes de l’époque</strong>, figurée sur scène par une <em>jupe crinoline</em> entravant le mouvement.</p>
+              <p>Véritable <strong>cabinet de curiosités contemporaines</strong>, l’univers de Bonnie Bécasse met en lumière la <em>fragilité du vivant</em> et la <strong>résistance du féminin</strong>.</p>
+            </div>
+          </div>
+          <div class="photo photo-naturaliste">
+            <img src="https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/WhatsApp%20Image%202025-02-02%20at%2008.42.15.jpeg" alt="Photo de scène — jupe crinoline">
           </div>
         </div>
       </section>
 
-      <!-- LIVE -->
+      <!-- LIVE (inchangé) -->
       <section class="section" aria-labelledby="live-title">
         <div class="col wide">
           <h2 id="live-title" class="title" style="font-size:22px;margin-bottom:16px;"><strong>Découvrir Bonnie Bécasse en LIVE :</strong></h2>
@@ -321,7 +416,7 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
         </div>
       </section>
 
-      <!-- LE BAUME ET LA LOUPE -->
+      <!-- LE BAUME ET LA LOUPE (fond craft inchangé) -->
       <section class="section bg-craft" aria-labelledby="intentions-title">
         <div class="overlay">
           <div class="col left">
@@ -329,14 +424,11 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
               Le baume et la loupe – <span class="subtitle"><em>identité musicale</em></span>
             </h2>
             <div class="body">
-              <p><strong>Portée par une voix profonde</strong> et un <em>imaginaire foisonnant</em>, Bonnie Bécasse trace une ligne fragile entre <strong>chanson poétique</strong>, <strong>naturaliste</strong> et <strong>engagée</strong>.</p>
-              <p>Entre la <strong>verve brute</strong> d’un <em>Bertrand Belin</em> et la <strong>délicatesse</strong> d’une <em>Emily Loizeau</em>, son univers sonore invite à une <strong>écoute suspendue</strong> — un espace où <strong>poésie et chair ne font plus qu’un.</strong></p>
 
-              <p>Seule sur scène, sa musique se déploie dans une <strong>forme épurée</strong>, presque <em>organique</em> : guitare et voix suffisent à faire naître <strong>des paysages émotionnels d’une rare intensité</strong>. Dans cette forme acoustique et minimaliste, la voix occupe l’espace comme une <strong>présence primitive</strong>, animale, presque <em>tellurique</em>.</p>
+              <p><strong>Portée par une voix profonde</strong> et un <em>imaginaire foisonnant</em>, Bonnie Bécasse trace une ligne fragile entre <strong>chanson poétique</strong>, <strong>naturaliste</strong> et <strong>engagée</strong>. Seule sur scène, elle sculpte une musique dépouillée, <em>organique</em> ; dans cet écrin minimaliste, la voix devient <strong>présence primitive</strong>, animale, presque <em>tellurique</em>.</p> 
+              <p>Entre la <strong>verve brute</strong> d’un <em>Bertrand Belin</em> et la <strong>délicatesse</strong> d’une <em>Emily Loizeau</em>, sa chanson <strong>dissèque les émotions à vif</strong>, avec la volonté de <strong>tout montrer</strong>. Ici, la poésie agit comme <strong>un baume et une loupe</strong> : elle <em>révèle</em>, <em>console</em>, et rappelle que tout, toujours, mérite d’être vu — <em>même le plus imparfait</em>.</p>
 
               <p>Ses textes incarnés explorent <strong>failles</strong> et <strong>révoltes</strong>, et sont peuplés d’<em>animaux-totems</em> — lièvre, libellule, cochon, oiseaux — autant d’allégories de la <strong>fuite</strong>, de la <strong>résistance</strong> et du <strong>désir d’émancipation</strong>.</p>
-
-              <p><em>Sorte de vanité du XXIᵉ siècle</em>, sa chanson <strong>dissèque les émotions à vif</strong>, dans la volonté de <strong>tout montrer</strong>. Ici, la poésie agit comme <strong>un baume et une loupe</strong> : elle <em>révèle</em>, <em>console</em>, et rappelle que tout, toujours, mérite d’être vu — <em>même le plus imparfait</em>.</p>
 
               <p><strong>Une écriture sincère et viscérale</strong>, où la <em>fragilité devient un territoire à défendre</em>.</p>
             </div>
@@ -344,14 +436,14 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
         </div>
       </section>
 
-      <!-- DIMENSION FÉMINISTE -->
+      <!-- DIMENSION FÉMINISTE – texte identique, photo = PAGE GARDE -->
       <section class="section" aria-labelledby="feminisme-title">
         <div class="col">
-          <div class="photo-inline">
-            <img src="https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/WhatsApp%20Image%202025-02-02%20at%2008.42.15.jpeg" alt="Photo de scène — crinoline">
+          <div class="photo-inline photo-naturaliste">
+            <img src="https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/Photo%20portrait%20PAGE%20GARDE.jpg" alt="Portrait — Amandine Larachiche">
           </div>
         </div>
-        <div class="col wide">
+        <div class="col wide naturaliste-frame">
           <h2 id="feminisme-title" class="title">
             De la voix à la révolte – <span class="subtitle">dimension féministe</span>
           </h2>
@@ -369,16 +461,16 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
         </div>
       </section>
 
-      <!-- BIOGRAPHIE -->
+      <!-- BIOGRAPHIE – texte identique, photo = Photo 2 -->
       <section class="section" aria-labelledby="bio-title">
-        <div class="col wide">
+        <div class="col wide naturaliste-frame">
           <h2 id="bio-title" class="title">
             La bécasse – <span class="subtitle">biographie</span>
           </h2>
           <div class="body">
-            <p><strong>Bonnie Bécasse</strong> est le projet musical porté par <strong>Amandine Larachiche</strong>, musicienne, interprète, autrice-compositrice – mais aussi <strong>comédienne</strong>. Née du besoin vital d’exprimer une <em>poésie brute et viscérale</em>, cette création récente s’impose déjà par la <strong>singularité de son univers</strong> et la <strong>force de son interprétation</strong>.</p>
+            <p><strong>Bonnie Bécasse</strong> est le projet musical porté par Amandine Larachiche, musicienne, interprète, <strong>autrice-compositrice – mais aussi comédienne</strong>. </p>
 
-            <p>Amandine n’est pas « née » dans la musique : elle l’a rencontrée à <strong>24 ans</strong>, en chantant sur le parvis d’une gare. L’espace public devient alors son premier terrain d’expression, où elle apprend la <em>persévérance</em>, la <em>débrouille</em> et surtout <strong>l’art de captiver un auditoire</strong>.</p>
+            <p>Son histoire avec la musique, pourtant, ne commence qu’à <strong>24 ans</strong>, lorsqu’elle chante sur le parvis d’une gare pour la première fois. L’espace public devient alors son premier terrain d’expression, où elle apprend la <em>persévérance</em>, la <em>débrouille</em> et <strong>l’art de captiver un auditoire</strong>.
 
             <p>À la manière de <em>Claire Diterzi</em>, elle explore des univers multiples, mêlant <strong>cabaret, poésie et théâtre</strong>, et place la <em>dramaturgie</em> au cœur de son processus de création : personnages, costume, histoire.</p>
 
@@ -386,13 +478,13 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
           </div>
         </div>
         <div class="col">
-          <div class="photo-inline">
+          <div class="photo-inline photo-naturaliste">
             <img src="https://raw.githubusercontent.com/BonnieBecasse/EPK-Bonnie-B-casse/refs/heads/main/Photo%202.jpg" alt="Portrait — Amandine Larachiche">
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
+      <!-- CONTACT (inchangé) -->
       <section class="bg-contact" aria-labelledby="contact-title">
         <div class="overlay">
           <div class="col right">
@@ -415,4 +507,3 @@ footer{padding:20px 56px;display:flex;justify-content:space-between;align-items:
   </div>
 </body>
 </html>
-
